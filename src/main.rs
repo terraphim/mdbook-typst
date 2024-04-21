@@ -376,7 +376,7 @@ fn main() -> Result<(), std::io::Error> {
     let command = match cfg.output.format {
         config::OutputFormat::Pdf => {
             let mut c = std::process::Command::new("typst");
-            c.arg("-v")
+            c
                 .arg("compile")
                 .arg("--format")
                 .arg("pdf")
@@ -386,7 +386,7 @@ fn main() -> Result<(), std::io::Error> {
         }
         config::OutputFormat::Svg => {
             let mut c = std::process::Command::new("typst");
-            c.arg("-v")
+            c
                 .arg("compile")
                 .arg("--format")
                 .arg("svg")
@@ -396,7 +396,7 @@ fn main() -> Result<(), std::io::Error> {
         }
         config::OutputFormat::Png => {
             let mut c = std::process::Command::new("typst");
-            c.arg("-v")
+            c
                 .arg("compile")
                 .arg("--format")
                 .arg("png")
